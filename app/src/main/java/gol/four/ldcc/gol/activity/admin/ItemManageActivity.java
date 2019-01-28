@@ -11,7 +11,6 @@ import gol.four.ldcc.gol.R;
 public class ItemManageActivity extends AppCompatActivity {
     private TabLayout tl;
     private ViewPager vp;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,5 +48,6 @@ public class ItemManageActivity extends AppCompatActivity {
 
             }
         });
+
     }
 }
