@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-
+    android:orientation="vertical"
+    tools:context=".activity.admin.ItemManageActivity">
 
     <LinearLayout
+        android:orientation="vertical"
         android:layout_gravity="center"
         android:gravity="center"
-        android:orientation="vertical"
         android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -19,13 +19,12 @@
             android:layout_width="75dp"
             android:layout_height="75dp"
             android:padding="10dp"
-            android:src="@drawable/func_item"/>
-
+            android:src="@drawable/icon_lock"/>
         <Button
             android:padding="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="자재 및 물품관리"
+            android:text="컨테이너 출입관리"
             android:textColor="#ffffff"
             android:background="@drawable/bt_corner"/>
 
@@ -37,19 +36,18 @@
         android:orientation="vertical">
 
         <android.support.design.widget.TabLayout
-            android:id="@+id/door_tab_layout"
+            android:id="@+id/item_tab_layout"
             app:tabIndicatorHeight="0dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </android.support.design.widget.TabLayout>
 
         <android.support.v4.view.ViewPager
-            android:id="@+id/door_pager"
+            android:id="@+id/item_pager"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         </android.support.v4.view.ViewPager>
 
     </LinearLayout>
-
 
 </LinearLayout>

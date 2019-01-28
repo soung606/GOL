@@ -10,14 +10,6 @@ import android.view.ViewGroup;
 
 import gol.four.ldcc.gol.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link DMIoFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link DMIoFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class DMIoFragment extends Fragment {
 
     public DMIoFragment() {

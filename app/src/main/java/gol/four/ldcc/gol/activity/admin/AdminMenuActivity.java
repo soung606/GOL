@@ -30,5 +30,12 @@ public class AdminMenuActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), DoorManageActivity.class));
             }
         });
+
+        itemClick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), ItemManageActivity.class));
+            }
+        });
     }
 }
