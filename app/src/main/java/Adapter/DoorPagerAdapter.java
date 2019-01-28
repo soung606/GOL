@@ -4,7 +4,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import fragment.DMIoFragment;
+import fragment.DMGrantFragment;
+import fragment.DMHistoryFragment;
 import fragment.DMReqFragment;
 
 public class DoorPagerAdapter extends FragmentStatePagerAdapter {
@@ -22,9 +23,11 @@ public class DoorPagerAdapter extends FragmentStatePagerAdapter {
                 DMReqFragment req = new DMReqFragment();
                 return req;
             case 1:
-            case 2:
-                DMIoFragment io = new DMIoFragment();
+                DMHistoryFragment io = new DMHistoryFragment();
                 return io;
+            case 2:
+                DMGrantFragment grant = new DMGrantFragment();
+                return grant;
 
             default:
                 return null;

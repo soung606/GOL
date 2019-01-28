@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import gol.four.ldcc.gol.R;
+import gol.four.ldcc.gol.activity.admin.AdminMenuActivity;
 import gol.four.ldcc.gol.activity.worker.WorkerMenuActivity;
 
 public class LoginActivity extends AppCompatActivity {
@@ -23,7 +24,8 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent=new Intent(LoginActivity.this,WorkerMenuActivity.class);
                 //intent.putExtra("text",String.valueOf(editText.getText()));
-                startActivity(intent);
+                //startActivity(intent);
+                startActivity(new Intent(getApplicationContext(), AdminMenuActivity.class));
                 finish();
             }
         });
