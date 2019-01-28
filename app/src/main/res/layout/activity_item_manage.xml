@@ -21,8 +21,8 @@
             android:padding="10dp"
             android:src="@drawable/icon_lock"/>
         <Button
-            android:padding="5dp"
-            android:layout_width="wrap_content"
+            android:padding="2dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="컨테이너 출입관리"
             android:textColor="#ffffff"
