@@ -6,4 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".activity.worker.WorkerMenuActivity">
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="30dp">
+
+        <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:contentDescription="Logo"
+        android:src="@mipmap/ic_launcher" />
+
+
+
+        <Button
+            android:id="@+id/door_menu_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
+            android:padding="0dp"
+            android:minHeight="40dp"
+            android:text="@string/door_request"/>
+
+    </LinearLayout>
+
+
+
 </android.support.constraint.ConstraintLayout>

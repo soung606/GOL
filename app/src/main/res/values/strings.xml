@@ -4,4 +4,11 @@
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="title_activity_item_manage">ItemManageActivity</string>
+    <string name="logo">LOGO</string>
+    <string name="input_id">아이디를 입력하세요</string>
+    <string name="input_pw">비밀번호를 입력하세요</string>
+    <string name="lost_pw">비밀번호 찾기</string>
+    <string name="auto_login">자동 로그인</string>
+    <string name="login">로그인</string>
+    <string name="door_request">컨테이너 출입 신청</string>
 </resources>
