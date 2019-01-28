@@ -9,4 +9,12 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="logo">LOGO</string>
+    <string name="input_id">아이디를 입력하세요</string>
+    <string name="input_pw">비밀번호를 입력하세요</string>
+    <string name="lost_pw">비밀번호 찾기</string>
+    <string name="auto_login">자동 로그인</string>
+    <string name="login">로그인</string>
+    <string name="door_request">컨테이너 출입 신청</string>
+
 </resources>

@@ -1,15 +1,13 @@
 package gol.four.ldcc.gol.activity.admin;
 
+
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.FragmentTabHost;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.TabHost;
 
 import Adapter.DoorPagerAdapter;
-import fragment.DMIoFragment;
-import fragment.DMReqFragment;
+
 import gol.four.ldcc.gol.R;
 
 public class DoorManageActivity extends AppCompatActivity {
@@ -20,7 +18,6 @@ public class DoorManageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_door_manage);
-
         init();
     }
 
