@@ -11,4 +11,5 @@
     <string name="auto_login">자동 로그인</string>
     <string name="login">로그인</string>
     <string name="door_request">컨테이너 출입 신청</string>
+
 </resources>
