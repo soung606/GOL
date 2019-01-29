@@ -39,6 +39,9 @@ public interface API {
     Call<ArrayList<JsonObject>> getNotices();
 
     @GET("applies/")
+    Call<ArrayList<JsonObject>> getApplies(@Query("apply_state") int applyState);
+
+    @GET("applies/")
     Call<ArrayList<JsonObject>> getApplies();
 
     @POST("")
