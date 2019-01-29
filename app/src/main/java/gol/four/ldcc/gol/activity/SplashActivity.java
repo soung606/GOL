@@ -50,10 +50,11 @@ public class SplashActivity extends AppCompatActivity {
                         String token = task.getResult().getToken();
 
                         //add the token to sharedPreference
-                        SharedPreferences sharedPreferences = getSharedPreferences("My File", Activity.MODE_PRIVATE);
+                        SharedPreferences sharedPreferences = getSharedPreferences("My_File", 0);
                         SharedPreferences.Editor editor = sharedPreferences.edit();
 
                         editor.putString("token", token);
+                        Log.d("SPLASH TOKEN", token);
                         editor.commit();
 
                         //Log.d("FCM Login", token);

@@ -23,7 +23,7 @@ public class ItemManageActivity extends AppCompatActivity {
         //set tab
         tl = (TabLayout) findViewById(R.id.item_tab_layout);
         tl.addTab(tl.newTab().setText("자재 목록"));
-        tl.addTab(tl.newTab().setText("자재 수정"));
+        tl.addTab(tl.newTab().setText("자재 히스토리"));
         tl.setTabGravity(TabLayout.GRAVITY_FILL);
 
         //set view pager

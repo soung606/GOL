@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -16,6 +17,7 @@ import gol.four.ldcc.gol.model.DMGrantItem;
 
 public class DMGrantAdapter extends BaseAdapter {
     ArrayList<DMGrantItem> list;
+    GrantViewHolder vh;
 
     public void clear(){
         list = new ArrayList<>();
@@ -24,6 +26,7 @@ public class DMGrantAdapter extends BaseAdapter {
 
     public DMGrantAdapter(){
         list = new ArrayList<>();
+
     }
 
     public void add(DMGrantItem i){
@@ -45,9 +48,8 @@ public class DMGrantAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
+    public View getView(final int i, View view, ViewGroup viewGroup) {
         Context context = viewGroup.getContext();
-        GrantViewHolder vh;
         if(view == null){
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(R.layout.dm_grant_item, viewGroup, false);
@@ -68,6 +70,22 @@ public class DMGrantAdapter extends BaseAdapter {
             vh.grant.setText("권한 부여");
         else
             vh.grant.setText("권한 해제");
+
+        vh.grant.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String grant = list.get(i).getIsGrant();
+                Button b = (Button)view;
+                if(grant.equals("0")){
+                    b.setText("권한 해제");
+                    list.get(i).setIsGrant("1");
+                }else{
+                    b.setText("권한 부여");
+                    list.get(i).setIsGrant("0");
+                }
+
+            }
+        });
 
 
         return view;

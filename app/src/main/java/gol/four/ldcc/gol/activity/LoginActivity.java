@@ -50,8 +50,8 @@ public class LoginActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     final String id = binding.idField.getText().toString();
                     final String password = binding.passwordField.getText().toString();
-                    final String token = sf.getString("token", null);
-                    //Log.d("Login FCM", token);
+                    String token = sf.getString("token", "");
+
                     Call<ArrayList<JsonObject>> result = GolService.instance().getService().login(id, password, token);
                     result.enqueue(new Callback<ArrayList<JsonObject>>() {
                         @Override
