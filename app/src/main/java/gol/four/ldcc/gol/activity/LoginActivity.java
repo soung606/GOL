@@ -8,13 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-<<<<<<< Updated upstream
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.Toast;
-=======
->>>>>>> Stashed changes
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;

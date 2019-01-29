@@ -60,7 +60,7 @@ public class IMListFragment extends Fragment {
                     IMListItem item = new IMListItem();
 
                     item.setCode(data.get(i).get("code").toString());
-                    item.setName(data.get(i).get("name").toString());
+                    item.setName(data.get(i).get("name").toString().replaceAll("\"", ""));
                     item.setWeight(data.get(i).get("weight").toString());
 
                     Log.d("Test", item.getName());

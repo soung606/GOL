@@ -55,9 +55,13 @@ public class IMHistoryFragment extends Fragment {
                 ArrayList<JsonObject> data = response.body();
 
                 for(int i = 0; i < data.size(); i++){
+                    JsonObject temp = data.get(i);
+                    JsonObject empInfo = temp.getAsJsonObject("employee_idx");
+                    JsonObject matInfo = temp.getAsJsonObject("material_code");
+
                     IMHistoryItem item = new IMHistoryItem();
-                    item.setName(data.get(i).get("employee_idx").toString());
-                    item.setMatName(data.get(i).get("material_code").toString());
+                    item.setName(empInfo.get("login_id").toString().replaceAll("\"", ""));
+                    item.setMatName(matInfo.get("name").toString().replaceAll("\"", ""));
                     item.setNum(data.get(i).get("material_num").toString());
 
                     Log.d("IMHF", item.getName());
