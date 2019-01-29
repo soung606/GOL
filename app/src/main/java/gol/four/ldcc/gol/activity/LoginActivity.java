@@ -39,35 +39,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login);
-<<<<<<< Updated upstream
-=======
-        binding.loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(LoginActivity.this,WorkerMenuActivity.class);
-                //intent.putExtra("text",String.valueOf(editText.getText()));
-                //startActivity(intent);
-                startActivity(new Intent(getApplicationContext(), AdminMenuActivity.class));
-                finish();
-
-                String id = binding.idField.getText().toString();
-                String password = binding.passwordField.getText().toString();
-
-                Call<ArrayList<JsonObject>> result = GolService.instance().getService().login(id, password);
-                result.enqueue(new Callback<ArrayList<JsonObject>>() {
-                    @Override
-                    public void onResponse(Call<ArrayList<JsonObject>> call, Response<ArrayList<JsonObject>> response) {
-                        Log.d("TEST", response.body().toString());
-                    }
-
-                    @Override
-                    public void onFailure(Call<ArrayList<JsonObject>> call, Throwable t) {
-                        Log.d("TEST", "FAIL");
-                        Log.d("TEST", t.getMessage());
-                    }
-                });
->>>>>>> Stashed changes
-
+        
         final CheckBox auto_login = findViewById(R.id.auto_login);
 
         SharedPreferences sf = getSharedPreferences(sfName, Activity.MODE_PRIVATE);
