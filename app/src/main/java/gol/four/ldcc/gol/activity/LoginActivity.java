@@ -4,13 +4,20 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
@@ -34,16 +41,14 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login);
-        
+        getFCMToken();
         final CheckBox auto_login = findViewById(R.id.auto_login);
-
         SharedPreferences sf = getSharedPreferences(sfName, Activity.MODE_PRIVATE);
         if(sf.getBoolean("isFirst",false) == false){
 
             binding.loginButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
                     final String id = binding.idField.getText().toString();
                     final String password = binding.passwordField.getText().toString();
 
@@ -97,5 +102,27 @@ public class LoginActivity extends AppCompatActivity {
             }
             finish();
         }
+    }
+
+    private void getFCMToken(){
+        FirebaseInstanceId.getInstance().getInstanceId()
+                .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
+                        if (!task.isSuccessful()) {
+                            Log.w("FCM Login", "getInstanceId failed", task.getException());
+                            return;
+                        }
+
+                                // Get new Instance ID token
+                                String token = task.getResult().getToken();
+
+                                // Log and toast
+
+                                Log.d("FCM Login", token);
+                                Toast.makeText(LoginActivity.this, token, Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                // [END retrieve_current_token]
     }
 }

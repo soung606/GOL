@@ -204,6 +204,10 @@
         "source": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\src\\main\\res\\drawable-v24\\bt_corner.xml"
     },
     {
+        "merged": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_icon_kor_helmet_small.png.flat",
+        "source": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\src\\main\\res\\drawable\\icon_kor_helmet_small.png"
+    },
+    {
         "merged": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_func_item.png.flat",
         "source": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\src\\main\\res\\drawable\\func_item.png"
     },
@@ -1680,6 +1684,10 @@
         "source": "C:\\Users\\s9101\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\050b657aba4008e3abe151c1cfb9bfc4\\res\\color\\mtrl_chip_close_icon_tint.xml"
     },
     {
+        "merged": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_icon_kor_helmet.png.flat",
+        "source": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\src\\main\\res\\drawable\\icon_kor_helmet.png"
+    },
+    {
         "merged": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_admin_menu.xml.flat",
         "source": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\src\\main\\res\\layout\\activity_admin_menu.xml"
     },
@@ -1968,6 +1976,10 @@
         "source": "C:\\Users\\s9101\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\c3a8dc9583417a259dcee502c31007ba\\res\\color\\switch_thumb_material_dark.xml"
     },
     {
+        "merged": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_splash.xml.flat",
+        "source": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\src\\main\\res\\layout\\activity_splash.xml"
+    },
+    {
         "merged": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\s9101\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\c3a8dc9583417a259dcee502c31007ba\\res\\drawable-xhdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
@@ -1982,6 +1994,10 @@
     {
         "merged": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_icon_light_focused.xml.flat",
         "source": "C:\\Users\\s9101\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\156e495b499ec54bae734fc56c4c50f5\\res\\drawable\\common_google_signin_btn_icon_light_focused.xml"
+    },
+    {
+        "merged": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_screen.png.flat",
+        "source": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\src\\main\\res\\drawable\\screen.png"
     },
     {
         "merged": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",

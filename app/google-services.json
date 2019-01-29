@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "857324014949",
+    "firebase_url": "https://lotte-gol.firebaseio.com",
+    "project_id": "lotte-gol",
+    "storage_bucket": "lotte-gol.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:857324014949:android:d9434a16ffad9fc2",
+        "android_client_info": {
+          "package_name": "gol.four.ldcc.gol"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "857324014949-7nt27cvo5gm8tb5108ni9urmjpektbv0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBK82Pwj4-SzD2QmJleO_0NYyXcwSXoEck"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

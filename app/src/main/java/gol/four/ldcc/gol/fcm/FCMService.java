@@ -10,6 +10,7 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.IBinder;
 import android.support.v4.app.NotificationCompat;
+import android.util.Log;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
@@ -52,4 +53,14 @@ public class FCMService extends FirebaseMessagingService {
         nManager.notify(0 /* ID of notification */, nBuilder.build());
     }
 
+    @Override
+    public void onNewToken(String s) {
+        Log.d("FCM TOKEN", s);
+
+        sendToken(s);
+    }
+
+    private void sendToken(String s){
+
+    }
 }
