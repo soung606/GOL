@@ -50,21 +50,23 @@ public class DMHistoryFragment extends Fragment {
             public void onResponse(Call<ArrayList<JsonObject>> call, Response<ArrayList<JsonObject>> response) {
                 ArrayList<JsonObject> data = response.body();
 
-                for(int i = 0; i < data.size(); i++){
-                    JsonObject temp = data.get(i);
+                if (data != null) {
+                    for (int i = 0; i < data.size(); i++) {
+                        JsonObject temp = data.get(i);
 
-                    JsonObject confirm = temp.getAsJsonObject("confirm_idx");
-                    JsonObject empInfo = temp.getAsJsonObject("employee_idx");
+                        JsonObject confirm = temp.getAsJsonObject("confirm_idx");
+                        JsonObject empInfo = temp.getAsJsonObject("employee_idx");
 
-                    DMHistoryItem item = new DMHistoryItem();
-                    item.setTime(temp.get("confirm_date").getAsString().split("T")[0]);
-                    item.setAdmin(confirm.get("login_id").getAsString());
-                    item.setUser(empInfo.get("login_id").getAsString());
+                        DMHistoryItem item = new DMHistoryItem();
+                        item.setTime(temp.get("confirm_date").getAsString().split("T")[0]);
+                        item.setAdmin(confirm.get("login_id").getAsString());
+                        item.setUser(empInfo.get("login_id").getAsString());
 
-                    adapter.add(item);
+                        adapter.add(item);
+                    }
+
+                    adapter.notifyDataSetChanged();
                 }
-
-                adapter.notifyDataSetChanged();
             }
 
             @Override

@@ -50,6 +50,8 @@ public class IMListAdapter extends BaseAdapter {
             vh.name = (TextView) view.findViewById(R.id.im_list_name);
             vh.code = (TextView) view.findViewById(R.id.im_list_code);
             vh.weight = (TextView) view.findViewById(R.id.im_list_weight);
+
+            view.setTag(vh);
         }else{
             vh = (IMListViewHolder) view.getTag();
         }

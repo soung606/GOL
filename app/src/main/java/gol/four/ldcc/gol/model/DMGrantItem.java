@@ -2,14 +2,14 @@ package gol.four.ldcc.gol.model;
 
 public class DMGrantItem {
 
-    String company, name, isGrant;
+    String time, name, isGrant;
 
-    public String getCompany() {
-        return company;
+    public String getTime() {
+        return time;
     }
 
-    public void setCompany(String company) {
-        this.company = company;
+    public void setTime(String time) {
+        this.time = time;
     }
 
     public String getName() {

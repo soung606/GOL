@@ -1992,12 +1992,12 @@
         "source": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_icon_light_focused.xml.flat",
-        "source": "C:\\Users\\s9101\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\156e495b499ec54bae734fc56c4c50f5\\res\\drawable\\common_google_signin_btn_icon_light_focused.xml"
-    },
-    {
         "merged": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_screen.png.flat",
         "source": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\src\\main\\res\\drawable\\screen.png"
+    },
+    {
+        "merged": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_icon_light_focused.xml.flat",
+        "source": "C:\\Users\\s9101\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\156e495b499ec54bae734fc56c4c50f5\\res\\drawable\\common_google_signin_btn_icon_light_focused.xml"
     },
     {
         "merged": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",

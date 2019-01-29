@@ -18,7 +18,7 @@ Retrofit 참조 : https://newland435.tistory.com/25
 
 public interface API {
     @GET("login/")
-    Call<ArrayList<JsonObject>> login(@Query("id") String id, @Query("password")String password);
+    Call<ArrayList<JsonObject>> login(@Query("id") String id, @Query("password")String password, @Query("token") String token);
 
     @GET("employees/")
     Call<ArrayList<JsonObject>> getEmployee();
@@ -43,6 +43,9 @@ public interface API {
 
     @GET("applies/")
     Call<ArrayList<JsonObject>> getApplies();
+
+    @GET("applies/")
+    Call<ArrayList<JsonObject>> getNameApplies(@Query("employee_idx__name") String name);
 
     @POST("")
     Call<ResponseBody> postEmployee(@Query("loginid")String loginId,

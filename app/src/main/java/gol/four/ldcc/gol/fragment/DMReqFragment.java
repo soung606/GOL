@@ -51,27 +51,29 @@ public class DMReqFragment extends Fragment {
             public void onResponse(Call<ArrayList<JsonObject>> call, Response<ArrayList<JsonObject>> response) {
                 ArrayList<JsonObject> data = response.body();
 
-                for(int i = 0; i < data.size(); i++){
-                    JsonObject temp = data.get(i);
+                if(data != null) {
+                    for (int i = 0; i < data.size(); i++) {
+                        JsonObject temp = data.get(i);
 
-                    JsonObject empInfo = temp.getAsJsonObject("employee_idx");
-                    String state = temp.get("apply_state").getAsString();
+                        JsonObject empInfo = temp.getAsJsonObject("employee_idx");
+                        String state = temp.get("apply_state").getAsString();
 
-                    DMReqItem item = new DMReqItem();
-                    item.setName(empInfo.get("login_id").getAsString().replaceAll("\"",""));
-                    item.setTime(temp.get("register_date").getAsString().split("T")[0]);
+                        DMReqItem item = new DMReqItem();
+                        item.setName(empInfo.get("login_id").getAsString().replaceAll("\"", ""));
+                        item.setTime(temp.get("register_date").getAsString().split("T")[0]);
 
-                    if(state.equals("0"))
-                        item.setGrant("대기");
-                    else if(state.equals("1"))
-                        item.setGrant("취소");
-                    else
-                        item.setGrant("승인");
+                        if (state.equals("0"))
+                            item.setGrant("대기");
+                        else if (state.equals("1"))
+                            item.setGrant("취소");
+                        else
+                            item.setGrant("승인");
 
-                    adapter.add(item);
+                        adapter.add(item);
+                    }
+
+                    adapter.notifyDataSetChanged();
                 }
-
-                adapter.notifyDataSetChanged();
             }
 
             @Override
