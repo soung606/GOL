@@ -5,7 +5,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import Adapter.ItemPagerAdapter;
+import gol.four.ldcc.gol.adapter.ItemPagerAdapter;
 import gol.four.ldcc.gol.R;
 
 public class ItemManageActivity extends AppCompatActivity {

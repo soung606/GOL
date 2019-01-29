@@ -3,9 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="fragment.DMGrantFragment">
+    tools:context="gol.four.ldcc.gol.fragment.DMGrantFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <!-- TODO: Update blank gol.four.ldcc.gol.fragment layout -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
