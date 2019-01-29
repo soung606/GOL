@@ -46,4 +46,11 @@ public interface API {
                                     @Query("password")String password,
                                     @Query("name") String name,
                                     @Query("auth")int auth);
+
+    @POST("applies/")
+    Call<ResponseBody> requestDoor(@Query("loginid")String loginId,
+                                    @Query("pk")String pk,
+                                    @Query("applytype") int applyId,
+                                    @Query("containerno")int containerNo,
+                                    @Query("applystate")int applyState);
 }
