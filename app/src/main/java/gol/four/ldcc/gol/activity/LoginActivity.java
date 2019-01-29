@@ -8,18 +8,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+<<<<<<< Updated upstream
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
+=======
+>>>>>>> Stashed changes
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import java.util.ArrayList;
-import java.util.List;
 
-import gol.four.ldcc.gol.Network.GolService;
+import gol.four.ldcc.gol.network.GolService;
 import gol.four.ldcc.gol.R;
 import gol.four.ldcc.gol.activity.admin.AdminMenuActivity;
 import gol.four.ldcc.gol.activity.worker.WorkerMenuActivity;
@@ -37,6 +39,34 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login);
+<<<<<<< Updated upstream
+=======
+        binding.loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(LoginActivity.this,WorkerMenuActivity.class);
+                //intent.putExtra("text",String.valueOf(editText.getText()));
+                //startActivity(intent);
+                startActivity(new Intent(getApplicationContext(), AdminMenuActivity.class));
+                finish();
+
+                String id = binding.idField.getText().toString();
+                String password = binding.passwordField.getText().toString();
+
+                Call<ArrayList<JsonObject>> result = GolService.instance().getService().login(id, password);
+                result.enqueue(new Callback<ArrayList<JsonObject>>() {
+                    @Override
+                    public void onResponse(Call<ArrayList<JsonObject>> call, Response<ArrayList<JsonObject>> response) {
+                        Log.d("TEST", response.body().toString());
+                    }
+
+                    @Override
+                    public void onFailure(Call<ArrayList<JsonObject>> call, Throwable t) {
+                        Log.d("TEST", "FAIL");
+                        Log.d("TEST", t.getMessage());
+                    }
+                });
+>>>>>>> Stashed changes
 
         final CheckBox auto_login = findViewById(R.id.auto_login);
 

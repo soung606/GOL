@@ -1,4 +1,4 @@
-package gol.four.ldcc.gol.Network;
+package gol.four.ldcc.gol.network;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -13,6 +13,7 @@ public class GolService {
             .baseUrl("http://54.180.142.153:8000/gol_server/")
             .addConverterFactory(GsonConverterFactory.create())
             .build();
+
     API api = retrofit.create(API.class);
 
     public static GolService instance() {
