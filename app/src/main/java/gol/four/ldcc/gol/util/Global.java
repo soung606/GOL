@@ -18,4 +18,6 @@ public class Global {
     public String getBaseUrl() {
         return baseUrl;
     }
+
+
 }

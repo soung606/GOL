@@ -10,7 +10,7 @@ public class GolService {
     private static GolService instance;
     //retrofit setting
     Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("http://54.180.142/153:8000/gol_server/")
+            .baseUrl("http://54.180.142.153:8000/gol_server/")
             .addConverterFactory(GsonConverterFactory.create())
             .build();
     API api = retrofit.create(API.class);
