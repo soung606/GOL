@@ -12,12 +12,12 @@
         "source": "C:\\Users\\s9101\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\c3a8dc9583417a259dcee502c31007ba\\res\\drawable\\tooltip_frame_light.xml"
     },
     {
-        "merged": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_tooltip_enter.xml.flat",
-        "source": "C:\\Users\\s9101\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\c3a8dc9583417a259dcee502c31007ba\\res\\anim\\abc_tooltip_enter.xml"
-    },
-    {
         "merged": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_star_black_48dp.png.flat",
         "source": "C:\\Users\\s9101\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\c3a8dc9583417a259dcee502c31007ba\\res\\drawable-hdpi-v4\\abc_ic_star_black_48dp.png"
+    },
+    {
+        "merged": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_tooltip_enter.xml.flat",
+        "source": "C:\\Users\\s9101\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\c3a8dc9583417a259dcee502c31007ba\\res\\anim\\abc_tooltip_enter.xml"
     },
     {
         "merged": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ratingbar_material.xml.flat",
@@ -64,12 +64,12 @@
         "source": "C:\\Users\\s9101\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\c3a8dc9583417a259dcee502c31007ba\\res\\drawable-xxhdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
     },
     {
-        "merged": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xxxhdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
-        "source": "C:\\Users\\s9101\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\c3a8dc9583417a259dcee502c31007ba\\res\\drawable-ldrtl-xxxhdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
-    },
-    {
         "merged": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_abc_edit_text_material.xml.flat",
         "source": "C:\\Users\\s9101\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\c3a8dc9583417a259dcee502c31007ba\\res\\drawable-v21\\abc_edit_text_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xxxhdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
+        "source": "C:\\Users\\s9101\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\c3a8dc9583417a259dcee502c31007ba\\res\\drawable-ldrtl-xxxhdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
         "merged": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
@@ -80,12 +80,12 @@
         "source": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\src\\main\\res\\layout\\fragment_im_history.xml"
     },
     {
-        "merged": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_chip_text_color.xml.flat",
-        "source": "C:\\Users\\s9101\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\050b657aba4008e3abe151c1cfb9bfc4\\res\\color\\mtrl_chip_text_color.xml"
-    },
-    {
         "merged": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_common_full_open_on_phone.png.flat",
         "source": "C:\\Users\\s9101\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\156e495b499ec54bae734fc56c4c50f5\\res\\drawable-hdpi-v4\\common_full_open_on_phone.png"
+    },
+    {
+        "merged": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_chip_text_color.xml.flat",
+        "source": "C:\\Users\\s9101\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\050b657aba4008e3abe151c1cfb9bfc4\\res\\color\\mtrl_chip_text_color.xml"
     },
     {
         "merged": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_screen_simple_overlay_action_mode.xml.flat",
@@ -208,12 +208,12 @@
         "source": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\src\\main\\res\\drawable\\icon_kor_helmet_small.png"
     },
     {
-        "merged": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_func_item.png.flat",
-        "source": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\src\\main\\res\\drawable\\func_item.png"
-    },
-    {
         "merged": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_pressed_holo_light.9.png.flat",
         "source": "C:\\Users\\s9101\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\c3a8dc9583417a259dcee502c31007ba\\res\\drawable-xxhdpi-v4\\abc_list_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_func_item.png.flat",
+        "source": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\src\\main\\res\\drawable\\func_item.png"
     },
     {
         "merged": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_navigation_item_header.xml.flat",
@@ -364,24 +364,24 @@
         "source": "C:\\Users\\s9101\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\050b657aba4008e3abe151c1cfb9bfc4\\res\\layout-sw600dp-v13\\design_layout_snackbar.xml"
     },
     {
-        "merged": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
-        "source": "C:\\Users\\s9101\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\c3a8dc9583417a259dcee502c31007ba\\res\\drawable-mdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
-    },
-    {
         "merged": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_design_ic_visibility_off.png.flat",
         "source": "C:\\Users\\s9101\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\050b657aba4008e3abe151c1cfb9bfc4\\res\\drawable-xhdpi-v4\\design_ic_visibility_off.png"
+    },
+    {
+        "merged": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
+        "source": "C:\\Users\\s9101\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\c3a8dc9583417a259dcee502c31007ba\\res\\drawable-mdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
     },
     {
         "merged": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_longpressed_holo.9.png.flat",
         "source": "C:\\Users\\s9101\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\c3a8dc9583417a259dcee502c31007ba\\res\\drawable-xxhdpi-v4\\abc_list_longpressed_holo.9.png"
     },
     {
-        "merged": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media_narrow_custom.xml.flat",
-        "source": "C:\\Users\\s9101\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-28.0.0.aar\\29901ad7ea6af8d79185522b6bdaae15\\res\\layout\\notification_template_big_media_narrow_custom.xml"
-    },
-    {
         "merged": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_star_black_16dp.png.flat",
         "source": "C:\\Users\\s9101\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\c3a8dc9583417a259dcee502c31007ba\\res\\drawable-hdpi-v4\\abc_ic_star_black_16dp.png"
+    },
+    {
+        "merged": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media_narrow_custom.xml.flat",
+        "source": "C:\\Users\\s9101\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-28.0.0.aar\\29901ad7ea6af8d79185522b6bdaae15\\res\\layout\\notification_template_big_media_narrow_custom.xml"
     },
     {
         "merged": "C:\\Users\\s9101\\Project\\LDCC\\GOL-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_dm_grant_item.xml.flat",

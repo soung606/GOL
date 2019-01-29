@@ -60,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
                             //[{"model":"GoL_Server.employee","pk":2,"fields":{"login_id":"qw","password":"12","name":"test","dt_register":"2019-01-29T00:52:48.998Z","authority":0,"auth":0}}]
 
                             JsonObject user_fields = (JsonObject) response.body().get(0).get("fields");
-                            String auth = user_fields.get("auth").toString();
+                            String auth = user_fields.get("authority").toString();
                             if(auth.equals("1")){
                                 Intent intent=new Intent(LoginActivity.this,AdminMenuActivity.class);
                                 startActivity(intent);
