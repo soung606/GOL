@@ -52,8 +52,6 @@ public interface API {
     @GET("applies/")
     Call<ArrayList<JsonObject>> getApplies();
 
-
-   
     @GET("applies/")
     Call<ArrayList<JsonObject>> getNameApplies(@Query("employee_idx__name") String name);
 

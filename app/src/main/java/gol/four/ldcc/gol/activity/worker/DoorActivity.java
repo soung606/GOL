@@ -1,13 +1,21 @@
 package gol.four.ldcc.gol.activity.worker;
 
 import android.app.Activity;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.nfc.NdefMessage;
 import android.nfc.NdefRecord;
 import android.nfc.NfcAdapter;
 import android.nfc.Tag;
+import android.os.Build;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,9 +25,13 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import java.nio.charset.Charset;
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 
 import gol.four.ldcc.gol.R;
+import gol.four.ldcc.gol.activity.LoginActivity;
+import gol.four.ldcc.gol.fcm.FCMService;
 import gol.four.ldcc.gol.network.GolService;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -51,52 +63,37 @@ public class DoorActivity extends AppCompatActivity {
                 result.enqueue(new Callback<ResponseBody>() {
                     @Override
                     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                        if (request_open.isClickable()) {
+                            request_open.setClickable(false);
+                        }
                         request_open.setImageResource(R.drawable.request_wait);
                     }
-
                     @Override
                     public void onFailure(Call<ResponseBody> call, Throwable t) {
                         Toast.makeText(getApplicationContext(),"요청이 전송되지 않았습니다. 다시 시도해주세요.", Toast.LENGTH_SHORT);
                     }
                 });
 
-               request_open.setOnClickListener(new View.OnClickListener() {
-                   @Override
-                   public void onClick(View v) {
+               //서버 신호가 true 면
+                Log.d("MESSSSSSSSSSSSSAGE",FCMService.isOpenNotOpen()+"");
+                while(FCMService.isReceiveMessage()){
+                    if(FCMService.isOpenNotOpen()){
+                      request_open.setImageResource(R.drawable.request_ok);
+                    }
+                    //서버 신호가 아니면
+                    else{
+                        request_open.setImageResource(R.drawable.request_no);
+                    }
+                }
 
-                       //서버 신호가 true 면
-                       if(true){
-
-                           String key = "233533";
-                           request_open.setImageResource(R.drawable.request_ok);
-                           nfcAdapter = NfcAdapter.getDefaultAdapter(DoorActivity.this);
-                           Log.d("TESSSSSSSSSSSSS", ""+nfcAdapter.isEnabled());
-                           if(nfcAdapter != null){
-                               //Toast.makeText(getApplicationContext(),"NFC 단말기를 접촉해주세요"+nfcAdapter+"", Toast.LENGTH_SHORT);
-                               Log.d("TESSSSTTTTTT", "NFC 단말기를 접촉해주세요"+nfcAdapter+"");
-                           }
-
-                           else{
-                               //Toast.makeText(getApplicationContext(),"NFC 기능이 꺼져있습니다. 켜주세요"+nfcAdapter+"", Toast.LENGTH_SHORT);
-                               Log.d("TESSSSTTTTTT", "NFC 기능이 꺼져있습니다. 켜주세요"+nfcAdapter+"");
-                           }
-                           Intent intent = new Intent(DoorActivity.this, getClass()).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                           pendingIntent = PendingIntent.getActivity(DoorActivity.this, 0, intent, 0);
-
-                           ndefMessage = new NdefMessage(new NdefRecord[]{
-                                   createNewTextRecord(key,Locale.ENGLISH,true)
-                           });
-                       }
-                       //서버 신호가 아니면
-                       else{
-                           request_open.setImageResource(R.drawable.request_no);
-                       }
-                   }
-               });
             }
-        });
-    }
 
+
+
+        });
+
+
+    }
     @Override
     protected void onPause() {
         if(nfcAdapter != null){
