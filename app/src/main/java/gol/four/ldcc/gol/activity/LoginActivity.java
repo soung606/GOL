@@ -43,15 +43,15 @@ public class LoginActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login);
         final CheckBox auto_login = findViewById(R.id.auto_login);
         final SharedPreferences sf = getSharedPreferences(sfName, Activity.MODE_PRIVATE);
+        FirebaseApp.initializeApp(getApplicationContext());
+        getFCMToken();
+
         if(sf.getBoolean("isFirst",false) == false){
 
             binding.loginButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     //set fcm
-                    FirebaseApp.initializeApp(getApplicationContext());
-                    getFCMToken();
-
                     final String id = binding.idField.getText().toString();
                     final String password = binding.passwordField.getText().toString();
                     String token = sf.getString("token", "");
@@ -67,6 +67,8 @@ public class LoginActivity extends AppCompatActivity {
                             String auth = user_fields.get("authority").toString();
                             String name = user_fields.get("name").toString();
                             String pk = response.body().get(0).get("pk").getAsString();
+
+
                             if(auth.equals("0")){
                                 Intent intent=new Intent(LoginActivity.this,WorkerMenuActivity.class);
                                 startActivity(intent);
@@ -82,11 +84,6 @@ public class LoginActivity extends AppCompatActivity {
                             editor.putString("auth", auth);//권한저장
                             editor.putString("pk", pk);
 
-                        SharedPreferences sf = getSharedPreferences(sfName, 0);
-                        SharedPreferences.Editor editor = sf.edit();//저장하려면 editor가 필요
-                        editor.putString("id", id); // 아이디 입력
-                        editor.putString("auth", auth);//권한저장
-                        editor.putString("pk", pk);
 
                         if(auto_login.isChecked() == true){
                             editor.putString("password", password);// 비번입력
