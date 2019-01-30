@@ -1,36 +1,23 @@
 package gol.four.ldcc.gol.activity.worker;
 
 import android.app.Activity;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.media.RingtoneManager;
-import android.net.Uri;
 import android.nfc.NdefMessage;
 import android.nfc.NdefRecord;
 import android.nfc.NfcAdapter;
-import android.nfc.Tag;
-import android.os.Build;
-import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
 import java.nio.charset.Charset;
-import java.util.HashMap;
 import java.util.Locale;
-import java.util.Map;
 
 import gol.four.ldcc.gol.R;
-import gol.four.ldcc.gol.activity.LoginActivity;
 import gol.four.ldcc.gol.fcm.FCMService;
 import gol.four.ldcc.gol.network.GolService;
 import okhttp3.ResponseBody;
@@ -38,7 +25,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class DoorActivity extends AppCompatActivity {
+public class DoorInitActivity extends AppCompatActivity {
 
     private NfcAdapter nfcAdapter;
     private PendingIntent pendingIntent;
@@ -47,7 +34,7 @@ public class DoorActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_door);
+        setContentView(R.layout.activity_door_init);
 
         SharedPreferences sf = getSharedPreferences("My_File", Activity.MODE_PRIVATE);
 
@@ -63,33 +50,16 @@ public class DoorActivity extends AppCompatActivity {
                 result.enqueue(new Callback<ResponseBody>() {
                     @Override
                     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                        if (request_open.isClickable()) {
-                            request_open.setClickable(false);
-                        }
-                        request_open.setImageResource(R.drawable.request_wait);
+                        Intent intent = new Intent(DoorInitActivity.this,DoorWaitActivity.class);
+                        startActivity(intent);
+                        finish();
                     }
                     @Override
                     public void onFailure(Call<ResponseBody> call, Throwable t) {
                         Toast.makeText(getApplicationContext(),"요청이 전송되지 않았습니다. 다시 시도해주세요.", Toast.LENGTH_SHORT);
                     }
                 });
-
-               //서버 신호가 true 면
-                Log.d("MESSSSSSSSSSSSSAGE",FCMService.isOpenNotOpen()+"");
-                while(FCMService.isReceiveMessage()){
-                    if(FCMService.isOpenNotOpen()){
-                      request_open.setImageResource(R.drawable.request_ok);
-                    }
-                    //서버 신호가 아니면
-                    else{
-                        request_open.setImageResource(R.drawable.request_no);
-                    }
-                }
-
             }
-
-
-
         });
 
 
@@ -97,7 +67,7 @@ public class DoorActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         if(nfcAdapter != null){
-            nfcAdapter.disableForegroundDispatch(DoorActivity.this);
+            nfcAdapter.disableForegroundDispatch(DoorInitActivity.this);
         }
         super.onPause();
     }
@@ -106,7 +76,7 @@ public class DoorActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         if(nfcAdapter != null){
-            nfcAdapter.setNdefPushMessage( ndefMessage,DoorActivity.this);
+            nfcAdapter.setNdefPushMessage( ndefMessage,DoorInitActivity.this);
         }
     }
 

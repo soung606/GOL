@@ -10,7 +10,6 @@ import android.widget.Button;
 
 import gol.four.ldcc.gol.R;
 import gol.four.ldcc.gol.activity.LoginActivity;
-import gol.four.ldcc.gol.activity.admin.AdminMenuActivity;
 
 public class WorkerMenuActivity extends AppCompatActivity {
 
@@ -41,7 +40,7 @@ public class WorkerMenuActivity extends AppCompatActivity {
         door_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(WorkerMenuActivity.this,DoorActivity.class);
+                Intent intent=new Intent(WorkerMenuActivity.this,DoorInitActivity.class);
                 //intent.putExtra("text",String.valueOf(editText.getText()));
                 startActivity(intent);
             }
