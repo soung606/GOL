@@ -50,7 +50,7 @@ public class DMReqFragment extends Fragment {
 
         GolService service = GolService.instance();
         //applystate=0, 대기 상태의 직원들의 정보를 보내줌
-        Call<ArrayList<JsonObject>> res = service.getService().getApplies();
+        Call<ArrayList<JsonObject>> res = service.getService().getApplies(0);
         res.enqueue(new Callback<ArrayList<JsonObject>>() {
             @Override
             public void onResponse(Call<ArrayList<JsonObject>> call, Response<ArrayList<JsonObject>> response) {
