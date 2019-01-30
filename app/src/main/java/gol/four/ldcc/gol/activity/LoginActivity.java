@@ -82,27 +82,32 @@ public class LoginActivity extends AppCompatActivity {
                             editor.putString("auth", auth);//권한저장
                             editor.putString("pk", pk);
 
-                            if(auto_login.isChecked() == true){
-                                editor.putString("password", password);// 비번입력
-                                editor.putString("name", name);
-                                editor.putString("auth", auth);//권한저장
-                                editor.putBoolean("isFirst", true);//자동로그인 저장
-                                editor.putString("pk", pk);//pk 값 저장
-                                editor.commit(); // 파일에 최종 반영함
-                                editor.putBoolean("isFirst", true);//자동로그인 저장
+                        SharedPreferences sf = getSharedPreferences(sfName, 0);
+                        SharedPreferences.Editor editor = sf.edit();//저장하려면 editor가 필요
+                        editor.putString("id", id); // 아이디 입력
+                        editor.putString("auth", auth);//권한저장
+                        editor.putString("pk", pk);
 
-                            }
-                            else{
-                                editor.putBoolean("isFirst", false);//자동로그인 안 저장
-                            }
-                            editor.commit();// 파일에 최종 반영함
-                            finish();
+                        if(auto_login.isChecked() == true){
+                            editor.putString("password", password);// 비번입력
+                            editor.putString("name", name);
+                            editor.putString("auth", auth);//권한저장
+                            editor.putBoolean("isFirst", true);//자동로그인 저장
+                            editor.putString("pk", pk);//pk 값 저장
+                            editor.commit(); // 파일에 최종 반영함
+                            editor.putBoolean("isFirst", true);//자동로그인 저장
                         }
-                        @Override
-                        public void onFailure(Call<ArrayList<JsonObject>> call, Throwable t) {
-                            Snackbar.make(binding.autoLogin,"아이디와 비밀번호를 다시 확인해 주세요",Snackbar.LENGTH_SHORT);
+                        else{
+                            editor.putBoolean("isFirst", false);//자동로그인 안 저장
                         }
-                    });
+                        editor.commit();// 파일에 최종 반영함
+                        finish();
+                    }
+                    @Override
+                    public void onFailure(Call<ArrayList<JsonObject>> call, Throwable t) {
+                        Snackbar.make(binding.autoLogin,"아이디와 비밀번호를 다시 확인해 주세요",Snackbar.LENGTH_SHORT);
+                    }
+                });
                 }
             });
 

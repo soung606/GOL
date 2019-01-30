@@ -19,20 +19,42 @@ import java.util.Map;
 
 import gol.four.ldcc.gol.R;
 import gol.four.ldcc.gol.activity.LoginActivity;
+import gol.four.ldcc.gol.activity.worker.DoorActivity;
 
 /**
  * push message를 받아 처리하는 클래스
  * */
 public class FCMService extends FirebaseMessagingService {
-    public FCMService() { }
+    private static boolean openNotOpen;
+    private static boolean receiveMessage;
+    public FCMService() {
+        openNotOpen = true;
+        receiveMessage = false;
+    }
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
         Map<String, String> data = remoteMessage.getData();
-        sendNotification(data);
+        String auth = remoteMessage.getData().get("auth");
+        if(auth.equals("0")){
+            sendNotificationAdmin(data);
+        }
+        else{
+            String status = remoteMessage.getData().get("status");
+
+            if(status.equals("1")){//open door
+                openNotOpen =  true;
+            }
+            else{
+                openNotOpen= false;
+            }
+
+            sendNotificationWorker(data);
+        }
+
     }
 
-    private void sendNotification(Map<String, String> data){
+    private void sendNotificationAdmin(Map<String, String> data){
         Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
@@ -51,6 +73,29 @@ public class FCMService extends FirebaseMessagingService {
 
         NotificationManager nManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         nManager.notify(0 /* ID of notification */, nBuilder.build());
+
+    }
+
+    private void sendNotificationWorker(Map<String, String> data){
+        Intent intent = new Intent(getApplicationContext(), DoorActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+        PendingIntent content = PendingIntent.getActivity(getApplicationContext(), 0, intent, PendingIntent.FLAG_ONE_SHOT);
+        Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+
+        NotificationCompat.Builder nBuilder = new NotificationCompat.Builder(this)
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setContentTitle(data.get("title"))
+                .setContentText(data.get("msg"))
+                .setAutoCancel(true)
+                .setSound(defaultSoundUri)
+                .setVibrate(new long[]{1000, 1000})
+                .setLights(Color.WHITE,1500,1500)
+                .setContentIntent(content);
+
+        NotificationManager nManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        nManager.notify(0 /* ID of notification */, nBuilder.build());
+        receiveMessage = true;
     }
 
     @Override
@@ -63,4 +108,12 @@ public class FCMService extends FirebaseMessagingService {
     private void sendToken(String s){
 
     }
+
+    public static boolean isOpenNotOpen(){
+        return openNotOpen;
+    }
+    public static boolean isReceiveMessage(){
+        return receiveMessage;
+    }
+
 }
