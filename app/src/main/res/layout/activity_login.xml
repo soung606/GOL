@@ -23,16 +23,55 @@
                 android:layout_marginTop="50dp"
                 android:src="@drawable/login_logo" />
 
-            <TextView
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="50dp"
-                android:fontFamily="@font/nanumbarunfont"
-                android:textStyle="bold"
-                android:textSize="20dp"
-                android:textAlignment="center"
-                android:text="가디언즈 오브 롯데"/>
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/mainColor"
+                    android:textStyle="bold"
+                    android:textSize="12pt"
+                    android:fontFamily="@font/nanumbarunfont"
+                    android:text="가"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12pt"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/nanumbarunfont"
+                    android:text="디언즈 "/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12pt"
+                    android:textColor="@color/mainColor"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/nanumbarunfont"
+                    android:text="오"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12pt"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/nanumbarunfont"
+                    android:text="브 "/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12pt"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/nanumbarunfont"
+                    android:text="롯데"/>
+
+            </LinearLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"

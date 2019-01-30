@@ -12,14 +12,14 @@
         android:minHeight="?attr/actionBarSize"
         android:textAlignment="center"
         android:gravity="center"
-        android:textSize="20dp"
+        android:textSize="18dp"
         android:textStyle="bold"
         android:fontFamily="@font/nanumbarunfont"
         android:text="가디언즈 오브 롯데" />
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="1px"
+        android:layout_height="2px"
         android:background="#b5b5b5"/>
 
     <LinearLayout

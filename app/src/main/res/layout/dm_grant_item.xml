@@ -18,26 +18,30 @@
         android:layout_weight="1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
+        android:textAlignment="textStart"
         android:fontFamily="@font/nanumbarunfont"
         android:text="name"/>
 
     <Button
         android:id="@+id/dm_grant_ok"
-        android:layout_weight="1"
-        android:layout_width="wrap_content"
+        android:layout_weight="0"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:textAlignment="center"
+        android:textColor="@color/mainColor"
         android:fontFamily="@font/nanumbarunfont"
         android:text="승인"/>
 
     <Button
         android:id="@+id/dm_grant_deny"
-        android:layout_weight="1"
-        android:layout_width="wrap_content"
+        android:layout_weight="0"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:fontFamily="@font/nanumbarunfont"
         android:text="취소"/>
+    <View
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>

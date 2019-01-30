@@ -137,7 +137,8 @@ public class DMGrantFragment extends Fragment {
 
                         String[] date = temp.get("register_date").getAsString().split("T");
 
-                        item.setTime(date[0]+"\n"+date[1]);
+                        //item.setTime(date[0]+"\n"+date[1]);
+                        item.setTime(date[0]);
                         item.setName(empInfo.get("name").getAsString().replaceAll("\"", ""));
 
                         adapter.add(item);
