@@ -50,6 +50,8 @@ public class IMHistoryAdapter extends BaseAdapter {
             vh.name = (TextView) view.findViewById(R.id.im_history_name);
             vh.matName = (TextView) view.findViewById(R.id.im_history_mat_name);
             vh.num = (TextView) view.findViewById(R.id.im_history_num);
+
+            view.setTag(vh);
         }else{
             vh = (IMHistoryViewHolder) view.getTag();
         }

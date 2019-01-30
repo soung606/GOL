@@ -51,7 +51,7 @@ public class DMHistoryAdapter extends BaseAdapter {
             vh.time = (TextView) view.findViewById(R.id.dm_his_time);
             vh.admin = (TextView) view.findViewById(R.id.dm_his_admin);
             vh.user = (TextView) view.findViewById(R.id.dm_his_user);
-
+            view.setTag(vh);
         } else{
             vh = (HistoryViewHolder) view.getTag();
         }

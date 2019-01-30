@@ -56,19 +56,22 @@ public class IMListFragment extends Fragment {
                 Log.d("IMLF", response.body().toString());
 
                 ArrayList<JsonObject> data = response.body();
-                for(int i = 0; i < data.size(); i++){
-                    IMListItem item = new IMListItem();
 
-                    item.setCode(data.get(i).get("code").toString());
-                    item.setName(data.get(i).get("name").toString());
-                    item.setWeight(data.get(i).get("weight").toString());
+                if(data != null) {
+                    for (int i = 0; i < data.size(); i++) {
+                        IMListItem item = new IMListItem();
 
-                    Log.d("Test", item.getName());
+                        item.setCode(data.get(i).get("code").toString());
+                        item.setName(data.get(i).get("name").toString().replaceAll("\"", ""));
+                        item.setWeight(data.get(i).get("weight").toString());
 
-                    adapter.add(item);
+                        Log.d("Test", item.getName());
+
+                        adapter.add(item);
+                    }
+
+                    adapter.notifyDataSetChanged();
                 }
-
-                adapter.notifyDataSetChanged();
             }
 
             @Override

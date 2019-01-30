@@ -2,14 +2,24 @@ package gol.four.ldcc.gol.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+
+import java.util.ArrayList;
+
 import gol.four.ldcc.gol.adapter.DMHistoryAdapter;
 import gol.four.ldcc.gol.R;
 import gol.four.ldcc.gol.model.DMHistoryItem;
+import gol.four.ldcc.gol.network.GolService;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class DMHistoryFragment extends Fragment {
     ListView list;
@@ -35,12 +45,35 @@ public class DMHistoryFragment extends Fragment {
 
         list.setAdapter(adapter);
 
-        DMHistoryItem i = new DMHistoryItem();
-        i.setAdmin("b");
-        i.setTime("b");
-        i.setUser("b");
+        GolService.instance().getService().getApplies(2).enqueue(new Callback<ArrayList<JsonObject>>() {
+            @Override
+            public void onResponse(Call<ArrayList<JsonObject>> call, Response<ArrayList<JsonObject>> response) {
+                ArrayList<JsonObject> data = response.body();
 
-        adapter.add(i);
+                if (data != null) {
+                    for (int i = 0; i < data.size(); i++) {
+                        JsonObject temp = data.get(i);
+
+                        JsonObject confirm = temp.getAsJsonObject("confirm_idx");
+                        JsonObject empInfo = temp.getAsJsonObject("employee_idx");
+
+                        DMHistoryItem item = new DMHistoryItem();
+                        item.setTime(temp.get("confirm_date").getAsString().split("T")[0]);
+                        item.setAdmin(confirm.get("login_id").getAsString());
+                        item.setUser(empInfo.get("login_id").getAsString());
+
+                        adapter.add(item);
+                    }
+
+                    adapter.notifyDataSetChanged();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ArrayList<JsonObject>> call, Throwable t) {
+                Log.d("DMHF", t.getMessage());
+            }
+        });
     }
 
 

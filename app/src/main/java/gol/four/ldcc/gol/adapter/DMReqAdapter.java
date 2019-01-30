@@ -52,6 +52,8 @@ public class DMReqAdapter extends BaseAdapter {
             vh.name = (TextView) view.findViewById(R.id.dm_req_name);
             vh.time = (TextView) view.findViewById(R.id.dm_req_time);
             vh.grant = (TextView) view.findViewById(R.id.dm_req_grant);
+
+            view.setTag(vh);
         }else{
             vh = (DMReqViewHolder) view.getTag();
         }

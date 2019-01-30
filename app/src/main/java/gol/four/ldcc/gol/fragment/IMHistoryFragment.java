@@ -54,18 +54,25 @@ public class IMHistoryFragment extends Fragment {
             public void onResponse(Call<ArrayList<JsonObject>> call, Response<ArrayList<JsonObject>> response) {
                 ArrayList<JsonObject> data = response.body();
 
-                for(int i = 0; i < data.size(); i++){
-                    IMHistoryItem item = new IMHistoryItem();
-                    item.setName(data.get(i).get("employee_idx").toString());
-                    item.setMatName(data.get(i).get("material_code").toString());
-                    item.setNum(data.get(i).get("material_num").toString());
+                if(data != null) {
+                    for (int i = 0; i < data.size(); i++) {
+                        JsonObject temp = data.get(i);
+                        JsonObject empInfo = temp.getAsJsonObject("employee_idx");
+                        JsonObject matInfo = temp.getAsJsonObject("material_code");
 
-                    Log.d("IMHF", item.getName());
+                        IMHistoryItem item = new IMHistoryItem();
+                        item.setName(empInfo.get("login_id").toString().replaceAll("\"", ""));
+                        item.setMatName(matInfo.get("name").toString().replaceAll("\"", ""));
+                        item.setNum(data.get(i).get("material_num").toString());
 
-                    adapter.add(item);
+                        Log.d("IMHF", item.getName());
+
+                        adapter.add(item);
+                    }
+
+
+                    adapter.notifyDataSetChanged();//바뀐 데이터 업데이트
                 }
-
-                adapter.notifyDataSetChanged();//바뀐 데이터 업데이트
             }
 
             @Override
