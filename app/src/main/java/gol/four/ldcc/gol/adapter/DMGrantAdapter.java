@@ -12,12 +12,14 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
 import java.util.ArrayList;
 
 import gol.four.ldcc.gol.R;
 import gol.four.ldcc.gol.model.DMGrantItem;
+import gol.four.ldcc.gol.model.UserInfo;
 import gol.four.ldcc.gol.network.GolService;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -25,17 +27,23 @@ import retrofit2.Response;
 
 public class DMGrantAdapter extends BaseAdapter {
     ArrayList<DMGrantItem> list;
+    ArrayList<UserInfo> emp;
     GrantViewHolder vh;
     Context context;
 
     public void clear(){
         list = new ArrayList<>();
+        emp = new ArrayList<>();
         this.notifyDataSetChanged();
     }
 
     public DMGrantAdapter(){
         list = new ArrayList<>();
+        emp = new ArrayList<>();
+    }
 
+    public void addEmpInfo(UserInfo data){
+        emp.add(data);
     }
 
     public void add(DMGrantItem i){
@@ -98,8 +106,15 @@ public class DMGrantAdapter extends BaseAdapter {
 
 
                 //set UserInfo
-/*
-                GolService.instance().getService().changeState().enqueue(new Callback<JsonObject>() {
+                Log.d("DMGA", "list : "+list.size()+" emp : "+emp.size());
+                UserInfo userInfo = emp.get(i);
+                String pk = userInfo.getPk();
+
+                GolService.instance().getService().changeState(pk, userInfo.getLogin_id(),
+                        userInfo.getPassword(),
+                        userInfo.getName(),
+                        userInfo.getAuthority(),
+                        userInfo.getToken()).enqueue(new Callback<JsonObject>() {
                     @Override
                     public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
                         Log.d("DMGA SUC", response.toString());
@@ -111,7 +126,7 @@ public class DMGrantAdapter extends BaseAdapter {
                     public void onFailure(Call<JsonObject> call, Throwable t) {
                         Log.d("DMGA FAIL", t.getMessage());
                     }
-                });*/
+                });
 
             }
         });

@@ -42,7 +42,7 @@ public class FCMService extends FirebaseMessagingService {
         NotificationCompat.Builder nBuilder = new NotificationCompat.Builder(this)
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setContentTitle(data.get("title"))
-                .setContentText(data.get("msg"))
+                .setContentText(data.get("body"))
                 .setAutoCancel(true)
                 .setSound(defaultSoundUri)
                 .setVibrate(new long[]{1000, 1000})

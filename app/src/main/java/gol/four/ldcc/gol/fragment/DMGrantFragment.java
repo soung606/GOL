@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import gol.four.ldcc.gol.R;
 import gol.four.ldcc.gol.adapter.DMGrantAdapter;
 import gol.four.ldcc.gol.model.DMGrantItem;
+import gol.four.ldcc.gol.model.UserInfo;
 import gol.four.ldcc.gol.network.GolService;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -29,6 +30,7 @@ public class DMGrantFragment extends Fragment {
     ListView lv;
     DMGrantAdapter adapter;
     GolService golService;
+    UserInfo userInfo;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -80,6 +82,16 @@ public class DMGrantFragment extends Fragment {
                                         item.setIsGrant("권한 해제");
 
                                     adapter.add(item);
+
+                                    userInfo = new UserInfo();
+                                    userInfo.setToken(empInfo.get("token").getAsString());
+                                    userInfo.setAuthority(empInfo.get("authority").getAsString());
+                                    userInfo.setName(empInfo.get("name").getAsString());
+                                    userInfo.setLogin_id(empInfo.get("login_id").getAsString());
+                                    userInfo.setPassword(empInfo.get("password").getAsString());
+                                    userInfo.setPk(empInfo.get("idx").getAsString());
+
+                                    adapter.addEmpInfo(userInfo);
                                 }
                                 adapter.notifyDataSetChanged();
                             }
@@ -118,6 +130,16 @@ public class DMGrantFragment extends Fragment {
                             item.setIsGrant("권한 해제");
 
                         adapter.add(item);
+
+                        userInfo = new UserInfo();
+                        userInfo.setToken(empInfo.get("token").getAsString());
+                        userInfo.setAuthority(empInfo.get("authority").getAsString());
+                        userInfo.setName(empInfo.get("name").getAsString());
+                        userInfo.setLogin_id(empInfo.get("login_id").getAsString());
+                        userInfo.setPassword(empInfo.get("password").getAsString());
+                        userInfo.setPk(empInfo.get("idx").getAsString());
+
+                        adapter.addEmpInfo(userInfo);
                     }
                     adapter.notifyDataSetChanged();
                 }

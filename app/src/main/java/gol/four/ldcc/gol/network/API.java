@@ -13,6 +13,7 @@ import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Part;
@@ -57,8 +58,12 @@ public interface API {
 
     @FormUrlEncoded
     @PUT("employees/{pk}/")
-    Call<JsonObject> changeState(@Body UserInfo userInfo,
-                                 @Path("pk") String pk);
+    Call<JsonObject> changeState(@Path("pk") String pk,
+                                 @Field("login_id")String loginId,
+                                 @Field("password")String pw,
+                                 @Field("name") String name,
+                                 @Field("authority") String auth,
+                                 @Field("token") String token);
 
     @POST("")
     Call<ResponseBody> postEmployee(@Query("loginid")String loginId,
