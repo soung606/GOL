@@ -5,11 +5,18 @@ import com.google.gson.JsonObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import gol.four.ldcc.gol.model.UserInfo;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Response;
+import retrofit2.http.Body;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
+import retrofit2.http.Part;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 /*
@@ -48,9 +55,8 @@ public interface API {
     @GET("applies/")
     Call<ArrayList<JsonObject>> getNameApplies(@Query("employee_idx__name") String name);
 
-    @POST("")
-    Call<ResponseBody> postEmployee(@Query("loginid")String loginId,
-                                    @Query("password")String password,
-                                    @Query("name") String name,
-                                    @Query("auth")int auth);
+    @FormUrlEncoded
+    @PUT("employees/{pk}/")
+    Call<JsonObject> changeState(@Body UserInfo userInfo,
+                                 @Path("pk") String pk);
 }

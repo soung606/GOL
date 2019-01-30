@@ -61,12 +61,14 @@ public class LoginActivity extends AppCompatActivity {
 
                             JsonObject user_fields = (JsonObject) response.body().get(0).get("fields");
                             String auth = user_fields.get("authority").toString();
-                            if(auth.equals("1")){
-                                Intent intent=new Intent(LoginActivity.this,AdminMenuActivity.class);
+                            String name = user_fields.get("name").toString();
+                            String pk = response.body().get(0).get("pk").getAsString();
+                            if(auth.equals("0")){
+                                Intent intent=new Intent(LoginActivity.this,WorkerMenuActivity.class);
                                 startActivity(intent);
                             }
                             else{
-                                Intent intent=new Intent(LoginActivity.this,WorkerMenuActivity.class);
+                                Intent intent=new Intent(LoginActivity.this,AdminMenuActivity.class);
                                 startActivity(intent);
                             }
                             if(auto_login.isChecked() == true){
@@ -74,8 +76,10 @@ public class LoginActivity extends AppCompatActivity {
                                 SharedPreferences.Editor editor = sf.edit();//저장하려면 editor가 필요
                                 editor.putString("id", id); // 아이디 입력
                                 editor.putString("password", password);// 비번입력
+                                editor.putString("name", name);
                                 editor.putString("auth", auth);//권한저장
                                 editor.putBoolean("isFirst", true);//자동로그인 저장
+                                editor.putString("pk", pk);//pk 값 저장
                                 editor.commit(); // 파일에 최종 반영함
 
                             }
@@ -92,12 +96,12 @@ public class LoginActivity extends AppCompatActivity {
 
         }
         else{
-            if(sf.getString("auth","").equals("1")){
-                Intent intent=new Intent(LoginActivity.this,AdminMenuActivity.class);
+            if(sf.getString("auth","").equals("0")){
+                Intent intent=new Intent(LoginActivity.this,WorkerMenuActivity.class);
                 startActivity(intent);
             }
             else{
-                Intent intent=new Intent(LoginActivity.this,WorkerMenuActivity.class);
+                Intent intent=new Intent(LoginActivity.this,AdminMenuActivity.class);
                 startActivity(intent);
             }
             finish();
