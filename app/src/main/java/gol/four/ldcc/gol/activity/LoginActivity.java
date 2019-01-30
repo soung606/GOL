@@ -78,7 +78,6 @@ public class LoginActivity extends AppCompatActivity {
                                 editor.putString("pk", pk);//pk 값 저장
                                 editor.commit(); // 파일에 최종 반영함
                                 editor.putBoolean("isFirst", true);//자동로그인 저장
-
                             }
                             else{
                                 editor.putBoolean("isFirst", false);//자동로그인 안 저장

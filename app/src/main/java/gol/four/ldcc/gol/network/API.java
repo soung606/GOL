@@ -52,6 +52,8 @@ public interface API {
     @GET("applies/")
     Call<ArrayList<JsonObject>> getApplies();
 
+
+   
     @GET("applies/")
     Call<ArrayList<JsonObject>> getNameApplies(@Query("employee_idx__name") String name);
 
@@ -65,11 +67,13 @@ public interface API {
                                     @Query("password")String password,
                                     @Query("name") String name,
                                     @Query("auth")int auth);
-
+    @FormUrlEncoded
     @POST("applies/")
-    Call<ResponseBody> requestDoor(@Query("loginid")String loginId,
-                                    @Query("pk")String pk,
-                                    @Query("applytype") int applyId,
-                                    @Query("containerno")int containerNo,
-                                    @Query("applystate")int applyState);
+    Call<ResponseBody> postApplies(@Field("apply_type") int applyType,
+                                   @Field("container_no") int containerNo,
+                                   @Field("confirm_idx") String confirm_idx,
+                                   @Field("employee_idx") String pk,
+                                   @Field("apply_state") int applyState);
+
+
 }
