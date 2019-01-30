@@ -75,7 +75,6 @@ public class LoginActivity extends AppCompatActivity {
                             if(auto_login.isChecked() == true){
                                 editor.putString("password", password);// 비번입력
                                 editor.putBoolean("isFirst", true);//자동로그인 저장
-
                             }
                             else{
                                 editor.putBoolean("isFirst", false);//자동로그인 안 저장
