@@ -4,20 +4,6 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Global {
-
-    private static Global instance = new Global();
-
-    public static Global getInstance() {
-        return instance;
-    }
-
-    private Global() {
-    }
-
-    String baseUrl = "http://54.180.142.153:8000/gol_server";
-    public String getBaseUrl() {
-        return baseUrl;
-    }
-
+    public static final String BROAD_CAST_LIST_REST = "1000";
 
 }

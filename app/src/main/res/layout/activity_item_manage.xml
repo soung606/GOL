@@ -26,6 +26,7 @@
             android:layout_height="wrap_content"
             android:minHeight="40dp"
             android:text="자재 및 물품관리"
+            android:fontFamily="@font/nanumbarunfont"
             android:textColor="#ffffff"
             android:background="@drawable/bt_corner"/>
 
@@ -38,7 +39,8 @@
 
         <android.support.design.widget.TabLayout
             android:id="@+id/item_tab_layout"
-            app:tabIndicatorHeight="0dp"
+            app:tabIndicatorHeight="3dp"
+            app:tabIndicatorColor="#45ABFF"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </android.support.design.widget.TabLayout>

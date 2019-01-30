@@ -31,6 +31,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/input_id"
+                    android:fontFamily="@font/nanumbarunfont"
                     android:inputType="text" />
 
             </android.support.design.widget.TextInputLayout>
@@ -44,6 +45,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/input_pw"
+                    android:fontFamily="@font/nanumbarunfont"
                     android:inputType="textPassword" />
 
             </android.support.design.widget.TextInputLayout>
@@ -52,6 +54,7 @@
                 android:id="@+id/auto_login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/nanumbarunfont"
                 android:text="@string/auto_login" />
 
             <Button
@@ -60,6 +63,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:background="#00ff0000"
+                android:fontFamily="@font/nanumbarunfont"
                 android:text="@string/lost_pw" />
 
             <Button
@@ -70,6 +74,7 @@
                 android:background="@drawable/login_button"
                 android:minHeight="40dp"
                 android:padding="0dp"
+                android:fontFamily="@font/nanumbarunfont"
                 android:text="@string/login"
                 android:textColor="#ffffff" />
 

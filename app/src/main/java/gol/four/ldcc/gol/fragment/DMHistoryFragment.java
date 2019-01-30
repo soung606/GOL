@@ -24,6 +24,12 @@ import retrofit2.Response;
 public class DMHistoryFragment extends Fragment {
     ListView list;
     DMHistoryAdapter adapter;
+
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+
     public DMHistoryFragment() {
         // Required empty public constructor
     }
