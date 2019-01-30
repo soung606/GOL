@@ -134,15 +134,11 @@ public class DMGrantFragment extends Fragment {
                         JsonObject temp = data.get(i);
                         JsonObject empInfo = temp.getAsJsonObject("employee_idx");
                         DMGrantItem item = new DMGrantItem();
-                        item.setTime(temp.get("register_date").getAsString().split("T")[0]);
+
+                        String[] date = temp.get("register_date").getAsString().split("T");
+
+                        item.setTime(date[0]+"\n"+date[1]);
                         item.setName(empInfo.get("name").getAsString().replaceAll("\"", ""));
-
-                        int status = temp.get("apply_state").getAsInt();
-
-                        if (status == 0 || status == 1)
-                            item.setIsGrant("권한 부여");
-                        else
-                            item.setIsGrant("권한 해제");
 
                         adapter.add(item);
 
