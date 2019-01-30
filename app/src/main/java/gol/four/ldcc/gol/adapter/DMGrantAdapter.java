@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.google.gson.JsonObject;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import gol.four.ldcc.gol.R;
 import gol.four.ldcc.gol.model.DMGrantItem;
@@ -65,6 +66,8 @@ public class DMGrantAdapter extends BaseAdapter {
     @Override
     public View getView(final int i, View view, ViewGroup viewGroup) {
         context = viewGroup.getContext();
+        Collections.reverse(list);
+        Collections.reverse(emp);
         if(view == null){
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(R.layout.dm_grant_item, viewGroup, false);
@@ -89,8 +92,9 @@ public class DMGrantAdapter extends BaseAdapter {
             public void onClick(View view) {
                 UserInfo userInfo = emp.get(i);
                 String pk = userInfo.getPk();
+                int row = Integer.parseInt(userInfo.getRow());
                 String cid = context.getSharedPreferences("My_File", 0).getString("pk","");
-                GolService.instance().getService().changeDoorGrant(cid, pk,i, 1).enqueue(new Callback<JsonObject>() {
+                GolService.instance().getService().changeDoorGrant(cid, pk,row, 1).enqueue(new Callback<JsonObject>() {
                     @Override
                     public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
                         Log.d("DMGA SUC", response.toString());

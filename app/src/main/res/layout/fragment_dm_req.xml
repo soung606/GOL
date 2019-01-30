@@ -8,9 +8,13 @@
         android:id="@+id/dm_req"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="5dp"
         android:layout_marginBottom="10dp"
         android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:background="@color/gray"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -23,6 +27,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textAlignment="center"
+                android:paddingTop="8dp"
                 android:text="신청시간"/>
 
             <TextView
@@ -30,6 +35,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textAlignment="center"
+                android:paddingTop="8dp"
                 android:text="신청인"/>
 
             <TextView
@@ -37,14 +43,26 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textAlignment="center"
+                android:paddingTop="8dp"
                 android:text="승인여부"/>
 
         </LinearLayout>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/gray"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="@color/gray"/>
+
         <ListView
             android:id="@+id/req_lv"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            tools:listitem="@layout/im_list_item"/>
     </LinearLayout>
 
 </FrameLayout>

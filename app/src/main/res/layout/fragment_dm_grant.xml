@@ -5,6 +5,11 @@
     android:orientation="vertical"
     tools:context="gol.four.ldcc.gol.fragment.DMGrantFragment">
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:background="@color/gray"/>
+
     <!-- TODO: Update blank gol.four.ldcc.gol.fragment layout -->
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,6 +35,17 @@
             android:background="@drawable/bt_corner"/>
 
     </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/gray"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="@color/gray"/>
+
     <ListView
         android:id="@+id/grant_lv"
         android:layout_width="match_parent"

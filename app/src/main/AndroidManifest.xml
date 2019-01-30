@@ -17,10 +17,9 @@
         <activity
             android:name=".activity.admin.AdminMenuActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.admin.DoorManageActivity" />
-        <activity android:name=".activity.admin.ItemManageActivity" />
-        <activity android:name=".activity.LoginActivity"></activity>
-
+        <activity android:name=".activity.admin.DoorManageActivity" android:launchMode="singleInstance" />
+        <activity android:name=".activity.admin.ItemManageActivity" android:launchMode="singleInstance" />
+        <activity android:name=".activity.LoginActivity" android:launchMode="singleInstance"></activity>
 
         <!-- fcm service add -->
         <service android:name=".fcm.FCMService">
@@ -37,6 +36,7 @@
             android:value="false" />
 
         <activity android:name=".activity.SplashActivity"
+            android:launchMode="singleInstance"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -44,16 +44,17 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.worker.WorkerMenuActivity" />
-        <activity android:name=".activity.worker.DoorInitActivity">
+        <activity android:name=".activity.worker.WorkerMenuActivity" android:launchMode="singleInstance"/>
+        <activity android:name=".activity.worker.DoorInitActivity" android:launchMode="singleInstance">
+
             <intent-filter>
                 <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
                 <category android:name="android.intent.category.DEFAULT"/>
                 <data android:mimeType="text/plain"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activity.worker.DoorWaitActivity"/>
-        <activity android:name=".activity.worker.DoorResultActivity"/>
+        <activity android:name=".activity.worker.DoorWaitActivity" android:launchMode="singleInstance"/>
+        <activity android:name=".activity.worker.DoorResultActivity" android:launchMode="singleInstance"/>
     </application>
 
 </manifest>

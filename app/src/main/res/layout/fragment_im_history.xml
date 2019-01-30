@@ -6,11 +6,17 @@
     android:orientation="vertical"
     tools:context=".fragment.IMHistoryFragment">
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:background="@color/gray"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
         android:orientation="horizontal">
 
         <TextView
@@ -35,6 +41,16 @@
             android:text="자재 수량"/>
 
     </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/gray"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="@color/gray"/>
 
     <ListView
         android:id="@+id/im_history_lv"

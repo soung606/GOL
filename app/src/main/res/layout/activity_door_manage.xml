@@ -6,30 +6,55 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/nanumbarunfont"
+        android:text="가디언즈 오브 롯데" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#b5b5b5"/>
 
     <LinearLayout
         android:layout_gravity="center"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+        <!--android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"-->
+
+
 
         <ImageView
             android:layout_width="75dp"
             android:layout_height="75dp"
             android:padding="10dp"
-            android:src="@drawable/func_lock"/>
+            android:src="@drawable/icon_lock"/>
 
-        <Button
+        <TextView
             android:padding="2dp"
-            android:layout_width="150dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minHeight="40dp"
+            android:textSize="18dp"
+            android:textStyle="bold"
             android:text="컨테이너 출입관리"
             android:fontFamily="@font/nanumbarunfont"
-            android:textColor="#ffffff"
-            android:background="@drawable/bt_corner"/>
+            android:textColor="@color/mainColor"
+            />
 
     </LinearLayout>
 
@@ -38,13 +63,25 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/gray"
+            />
+
         <android.support.design.widget.TabLayout
+            app:tabTextAppearance="@style/TabTextAppearance"
             android:id="@+id/door_tab_layout"
             app:tabIndicatorHeight="3dp"
-            app:tabIndicatorColor="#45ABFF"
+            app:tabIndicatorColor="@color/mainColor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </android.support.design.widget.TabLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/gray"/>
 
         <android.support.v4.view.ViewPager
             android:id="@+id/door_pager"
