@@ -45,13 +45,15 @@
         </activity>
 
         <activity android:name=".activity.worker.WorkerMenuActivity" />
-        <activity android:name=".activity.worker.DoorActivity">
+        <activity android:name=".activity.worker.DoorInitActivity">
             <intent-filter>
                 <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
                 <category android:name="android.intent.category.DEFAULT"/>
                 <data android:mimeType="text/plain"/>
             </intent-filter>
         </activity>
+        <activity android:name=".activity.worker.DoorWaitActivity"/>
+        <activity android:name=".activity.worker.DoorResultActivity"/>
     </application>
 
 </manifest>
