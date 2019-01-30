@@ -67,13 +67,6 @@ public class DMReqFragment extends Fragment {
                         item.setName(empInfo.get("login_id").getAsString().replaceAll("\"", ""));
                         item.setTime(temp.get("register_date").getAsString().split("T")[0]);
 
-                        if (state.equals("0"))
-                            item.setGrant("대기");
-                        else if (state.equals("1"))
-                            item.setGrant("취소");
-                        else
-                            item.setGrant("승인");
-
                         adapter.add(item);
                     }
 

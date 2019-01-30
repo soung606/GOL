@@ -60,7 +60,7 @@ public class DMReqAdapter extends BaseAdapter {
 
         vh.name.setText(list.get(i).getName());
         vh.time.setText(list.get(i).getTime());
-        vh.grant.setText(list.get(i).getGrant());
+        vh.grant.setText("대기");
 
         return view;
     }
