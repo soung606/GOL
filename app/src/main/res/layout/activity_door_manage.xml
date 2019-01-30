@@ -27,6 +27,7 @@
             android:layout_height="wrap_content"
             android:minHeight="40dp"
             android:text="컨테이너 출입관리"
+            android:fontFamily="@font/nanumbarunfont"
             android:textColor="#ffffff"
             android:background="@drawable/bt_corner"/>
 

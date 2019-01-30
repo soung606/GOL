@@ -29,37 +29,9 @@ public class SplashActivity extends AppCompatActivity {
         h.postDelayed(new Runnable() {
             @Override
             public void run() {
-                FirebaseApp.initializeApp(getApplicationContext());
-                getFCMToken();
                 startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                 finish();
             }
         }, 1500);
-    }
-
-    private void getFCMToken(){
-        FirebaseInstanceId.getInstance().getInstanceId()
-                .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
-                        if (!task.isSuccessful()) {
-                            Log.w("FCM Login", "getInstanceId failed", task.getException());
-                            return;
-                        }
-                        // Get new Instance ID token
-                        String token = task.getResult().getToken();
-
-                        //add the token to sharedPreference
-                        SharedPreferences sharedPreferences = getSharedPreferences("My_File", 0);
-                        SharedPreferences.Editor editor = sharedPreferences.edit();
-
-                        editor.putString("token", token);
-                        Log.d("SPLASH TOKEN", token);
-                        editor.commit();
-
-                        //Log.d("FCM Login", token);
-                    }
-                });
-        // [END retrieve_current_token]
     }
 }

@@ -1,18 +1,15 @@
 package gol.four.ldcc.gol.adapter;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.SharedPreferences;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.ListView;
 import android.widget.TextView;
 
-import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
 import java.util.ArrayList;
@@ -21,6 +18,7 @@ import gol.four.ldcc.gol.R;
 import gol.four.ldcc.gol.model.DMGrantItem;
 import gol.four.ldcc.gol.model.UserInfo;
 import gol.four.ldcc.gol.network.GolService;
+import gol.four.ldcc.gol.util.Global;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -74,7 +72,8 @@ public class DMGrantAdapter extends BaseAdapter {
             vh = new GrantViewHolder();
             vh.name = (TextView) view.findViewById(R.id.dm_grant_name);
             vh.time = (TextView) view.findViewById(R.id.dm_grant_time);
-            vh.grant = (Button) view.findViewById(R.id.dm_grant_isgrant);
+            vh.ok = (Button) view.findViewById(R.id.dm_grant_ok);
+            vh.deny = (Button) view.findViewById(R.id.dm_grant_deny);
 
             view.setTag(vh);
         }else{
@@ -83,43 +82,44 @@ public class DMGrantAdapter extends BaseAdapter {
 
         vh.name.setText(list.get(i).getName());
         vh.time.setText(list.get(i).getTime());
-        if(list.get(i).getIsGrant().equals("0"))
-            vh.grant.setText("권한 부여");
-        else
-            vh.grant.setText("권한 해제");
 
-        vh.grant.setOnClickListener(new View.OnClickListener() {
+        //권한 취소
+        vh.deny.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String auth = list.get(i).getIsGrant();
-                Button b = (Button)view;
-
-                if(auth.equals("0")){
-                    b.setText("권한 해제");
-                    auth = "1";
-                    list.get(i).setIsGrant("1");
-                }else{
-                    b.setText("권한 부여");
-                    auth="0";
-                    list.get(i).setIsGrant("0");
-                }
-
-
-                //set UserInfo
-                Log.d("DMGA", "list : "+list.size()+" emp : "+emp.size());
                 UserInfo userInfo = emp.get(i);
                 String pk = userInfo.getPk();
-
-                GolService.instance().getService().changeState(pk, userInfo.getLogin_id(),
-                        userInfo.getPassword(),
-                        userInfo.getName(),
-                        userInfo.getAuthority(),
-                        userInfo.getToken()).enqueue(new Callback<JsonObject>() {
+                String cid = context.getSharedPreferences("My_File", 0).getString("pk","");
+                GolService.instance().getService().changeDoorGrant(cid, pk,i, 1).enqueue(new Callback<JsonObject>() {
                     @Override
                     public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
                         Log.d("DMGA SUC", response.toString());
-                        JsonObject result = response.body();
-                        Log.d("DMGA SUC", result.toString()+" temp");
+                    }
+
+                    @Override
+                    public void onFailure(Call<JsonObject> call, Throwable t) {
+                        Log.d("DMGA FAIL", t.getMessage());
+                    }
+                });
+
+            }
+        });
+
+        //권한 승인
+        vh.ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                UserInfo userInfo = emp.get(i);
+                String pk = userInfo.getPk();
+                String cid = context.getSharedPreferences("My_File", 0).getString("pk","");
+                GolService.instance().getService().changeDoorGrant(cid, pk,i, 2).enqueue(new Callback<JsonObject>() {
+                    @Override
+                    public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+                        Log.d("DMGA SUC", response.toString());
+
+                        Intent i = new Intent("list_update");
+                        context.sendBroadcast(i);
                     }
 
                     @Override
@@ -137,6 +137,6 @@ public class DMGrantAdapter extends BaseAdapter {
 
     public class GrantViewHolder{
         TextView time, name;
-        Button grant;
+        Button ok, deny;
     }
 }

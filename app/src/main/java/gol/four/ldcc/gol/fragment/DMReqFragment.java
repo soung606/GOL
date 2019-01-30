@@ -25,6 +25,11 @@ public class DMReqFragment extends Fragment {
     private ListView list;
     private DMReqAdapter adapter;
 
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+
     public DMReqFragment() {
         // Required empty public constructor
     }

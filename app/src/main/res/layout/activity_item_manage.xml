@@ -26,6 +26,7 @@
             android:layout_height="wrap_content"
             android:minHeight="40dp"
             android:text="자재 및 물품관리"
+            android:fontFamily="@font/nanumbarunfont"
             android:textColor="#ffffff"
             android:background="@drawable/bt_corner"/>
 
