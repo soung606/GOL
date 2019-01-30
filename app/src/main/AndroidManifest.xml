@@ -3,6 +3,8 @@
     package="gol.four.ldcc.gol">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-feature android:name="android.hardware.nfc" android:required="false"/>
+    <uses-permission android:name="android.permission.NFC"/>
 
     <application
         android:allowBackup="true"
@@ -15,10 +17,9 @@
             android:name=".activity.admin.AdminMenuActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.admin.DoorManageActivity" />
-        <activity android:name=".activity.worker.DoorActivity" />
         <activity android:name=".activity.admin.ItemManageActivity" />
         <activity android:name=".activity.LoginActivity"></activity>
-        <activity android:name=".activity.worker.WorkerMenuActivity" />
+
 
         <!-- fcm service add -->
         <service android:name=".fcm.FCMService">
@@ -39,6 +40,15 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activity.worker.WorkerMenuActivity" />
+        <activity android:name=".activity.worker.DoorActivity">
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/plain"/>
             </intent-filter>
         </activity>
     </application>
