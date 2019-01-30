@@ -2,7 +2,15 @@ package gol.four.ldcc.gol.model;
 
 public class UserInfo {
     String login_id, password, name, authority, token;
-    String pk;
+    String pk, row;
+
+    public String getRow() {
+        return row;
+    }
+
+    public void setRow(String row) {
+        this.row = row;
+    }
 
     public String getPk() {
         return pk;

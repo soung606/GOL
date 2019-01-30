@@ -106,6 +106,7 @@ public class DMGrantFragment extends Fragment {
                         userInfo.setLogin_id(empInfo.get("login_id").getAsString());
                         userInfo.setPassword(empInfo.get("password").getAsString());
                         userInfo.setPk(empInfo.get("idx").getAsString());
+                        userInfo.setRow(temp.get("idx").getAsString());
 
                         adapter.addEmpInfo(userInfo);
                     }
@@ -152,7 +153,8 @@ public class DMGrantFragment extends Fragment {
                         userInfo.setLogin_id(empInfo.get("login_id").getAsString());
                         userInfo.setPassword(empInfo.get("password").getAsString());
                         userInfo.setPk(empInfo.get("idx").getAsString());
-
+                        userInfo.setRow(temp.get("idx").getAsString());
+                        
                         adapter.addEmpInfo(userInfo);
                     }
                     adapter.notifyDataSetChanged();

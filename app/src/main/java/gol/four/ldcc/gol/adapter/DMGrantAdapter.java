@@ -113,7 +113,8 @@ public class DMGrantAdapter extends BaseAdapter {
                 UserInfo userInfo = emp.get(i);
                 String pk = userInfo.getPk();
                 String cid = context.getSharedPreferences("My_File", 0).getString("pk","");
-                GolService.instance().getService().changeDoorGrant(cid, pk,i, 2).enqueue(new Callback<JsonObject>() {
+                int row = Integer.parseInt(userInfo.getRow());
+                GolService.instance().getService().changeDoorGrant(cid, pk,row, 2).enqueue(new Callback<JsonObject>() {
                     @Override
                     public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
                         Log.d("DMGA SUC", response.toString());
